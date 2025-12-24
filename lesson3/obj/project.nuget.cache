@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "of7hhtS309A=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\a\\Desktop\\SQL\\SQL third week\\Lesson 3\\lesson3\\lesson3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\a\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\a\\.nuget\\packages\\npgsql\\10.0.1\\npgsql.10.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
