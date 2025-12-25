@@ -9,8 +9,10 @@ public class OutfitDetailsService : ApplicationDB_, IOutfitDetailsService
     {
         using var conn = new NpgsqlConnection(connString);
         conn.Open();
-        var insertQuery = $"insert into outfit_details(outfit_id,item_id) values({outfitDetails.Outfit_id},{outfitDetails.Item_id})";
+        var insertQuery = $"insert into outfit_details(outfit_id,item_id) values(@outfitId,@itemId)";
         using var cmd = new NpgsqlCommand(insertQuery,conn);
+        cmd.Parameters.AddWithValue("@outfitId",outfitDetails.Outfit_id);
+        cmd.Parameters.AddWithValue("@itemId",outfitDetails.Item_id);
         cmd.ExecuteNonQuery();
     }
 
@@ -18,8 +20,9 @@ public class OutfitDetailsService : ApplicationDB_, IOutfitDetailsService
     {
         using var conn = new NpgsqlConnection(connString);
         conn.Open();
-        var deleteQuery = $"delete from outfit_details where id = {detailId}";
+        var deleteQuery = $"delete from outfit_details where id = @detailId";
         using var cmd = new NpgsqlCommand(deleteQuery,conn);
+        cmd.Parameters.AddWithValue("@detailId",detailId);
         var res = cmd.ExecuteNonQuery();
         return res == 0 ? "Can't delete outfit detail" : "Outfit's details were deleted successfully";
     }
@@ -59,14 +62,32 @@ public class OutfitDetailsService : ApplicationDB_, IOutfitDetailsService
         return result;
         }
 
+        public void GetOutfitDetailById()
+    {
+        using var conn = new NpgsqlConnection(connString);
+        conn.Open();
+        System.Console.WriteLine("Type id of detail that you are searching: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+        System.Console.WriteLine("Outfit's detail that you were searching for: ");
+        var selectQuery = $"select * from outfit_details where id = @a";
+        using var cmd = new NpgsqlCommand(selectQuery,conn);
+        cmd.Parameters.AddWithValue("@a",a);
+        var res = cmd.ExecuteReader();
+        while (res.Read())
+        {
+            System.Console.WriteLine($"{res["outfit_id"]}---{res["item_id"]}");
+        }
+    }
 
     public string? UpdateOutfitDetail(int detailId, int newItemId)
     {
         using var conn = new NpgsqlConnection(connString);
         conn.Open();
-        var updateQuery = $"update items set item_id = {newItemId} where id = {detailId}";
+        var updateQuery = $"update items set item_id = @newItemId where id = @detailId";
         using var cmd = new NpgsqlCommand(updateQuery,conn);
         var res = cmd.ExecuteNonQuery();
+        cmd.Parameters.AddWithValue("@newItemId",newItemId);
+        cmd.Parameters.AddWithValue("@detailId",detailId);
         return res == 0 ? "Can't update detail" : "Outfit's detail was updated successfully";
     }
 

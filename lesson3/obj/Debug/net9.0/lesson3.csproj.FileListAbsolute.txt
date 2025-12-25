@@ -21,3 +21,4 @@ C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\lesson3\obj\Debug\net9.0\refint\l
 C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\lesson3\obj\Debug\net9.0\lesson3.pdb
 C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\lesson3\obj\Debug\net9.0\lesson3.genruntimeconfig.cache
 C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\lesson3\obj\Debug\net9.0\ref\lesson3.dll
+C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\lesson3\obj\Debug\net9.0\lesson3.sourcelink.json

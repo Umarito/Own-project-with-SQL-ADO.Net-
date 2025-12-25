@@ -9,3 +9,4 @@ C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\Domain\obj\Debug\net9.0\Domain.dl
 C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\Domain\obj\Debug\net9.0\refint\Domain.dll
 C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\Domain\obj\Debug\net9.0\Domain.pdb
 C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\Domain\obj\Debug\net9.0\ref\Domain.dll
+C:\Users\a\Desktop\SQL\SQL third week\Lesson 3\Domain\obj\Debug\net9.0\Domain.sourcelink.json
